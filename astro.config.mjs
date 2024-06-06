@@ -12,15 +12,15 @@ export default defineConfig({
     starlight({
       title: "JRAMMA",
       social: {
-        github: "https://github.com/withastro/starlight",
+        github: "https://github.com/jramma",
       },
       sidebar: [
         {
-          label: "Guides",
+          label: "Guía",
           items: [
             // Each item here is one entry in the navigation menu.
             {
-              label: "Example Guide",
+              label: "Guía de jramma",
               link: "/guides/example/",
             },
           ],
