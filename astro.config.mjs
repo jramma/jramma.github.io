@@ -10,7 +10,7 @@ export default defineConfig({
   base: "/",
   integrations: [
     starlight({
-      title: "My Docs",
+      title: "JRAMMA",
       social: {
         github: "https://github.com/withastro/starlight",
       },
