@@ -1,6 +1,16 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: 'https://jramma.github.io',
-  base: 'jramma',
-})
+  site: "https://jramma.github.io",
+  base: "home",
+  integrations: [react()],
+  vite: {
+    plugins: [
+      tailwindcss({
+        applyBaseStyles: false,
+      }),
+    ],
+  },
+});
