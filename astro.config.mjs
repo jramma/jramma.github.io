@@ -4,7 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://jramma.github.io",
-  base: "home",
   integrations: [react()],
   vite: {
     plugins: [
