@@ -1,0 +1,17 @@
+---
+// Props que le pasamos desde el padre
+const { href, label } = Astro.props;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="border-b-2 border-black dark:border-white w-full group overflow-hidden"
+>
+  <span
+    class="block link-item transition-all duration-500 ease-in-out group-hover:translate-x-40"
+  >
+    {label}
+  </span>
+</a>
