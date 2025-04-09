@@ -7,25 +7,37 @@ const links = [
   { label: "My resume", href: "https://jramma.netlify.app/en/" },
   { label: "My social", href: "https://www.jramma.com/contact/" },
 ];
+import img from "@/assets/hero.jpg";
+import Image from "astro/components/Image.astro";
 ---
 
 <section class="flex flex-grow justify-center items-center h-full">
   <div
-    class="card dark:shadow-[20px_20px_60px_rgba(0,0,0,0.6),-20px_-20px_60px_rgba(255,255,255,0.1)]
-  relative p-1 rounded-xl flex flex-col justify-center items-center overflow-hidden"
+    class="relative p-2 rounded-xl flex flex-col justify-center items-center overflow-hidden m-6"
+    style="perspective: 1000px;"
   >
     <div
-      class="aspect-video pr-40 pb-20 border-2 flex flex-col gap-4 border-solid border-white backdrop-blur-md rounded-lg p-6 w-full h-full z-20 bg-white/60 dark:bg-black/20 dark:text-white"
+      class="pb-20 border-2 flex flex-col gap-4 border-solid border-white backdrop-blur-md rounded-lg p-6 w-full h-full z-20 bg-white/60 dark:bg-black/20 dark:text-white"
     >
-      <a
-        class="text-4xl transition-all duration-300 hover:scale-105 hover:text-accent"
-        href="https://www.jramma.com"
-        target="_blank"
-      >
-        Jramma
-      </a>
-      <p class="mt-4 text-lg text-gray-700 dark:text-gray-300">My links:</p>
-      <div class="pl-4 flex flex-wrap gap-3 w-full flex-grow">
+      <div class="flex items-start w-full gap-2 md:gap-20 ">
+        <a
+          class="text-4xl md:text-7xl transition-all duration-200 hover:scale-105 hover:text-accent"
+          href="https://www.jramma.com"
+          target="_blank"
+        >
+          Jramma
+        </a>
+        <div class="avatar-3d-wrapper ml-4">
+          <Image
+            src={img}
+            alt="Jramma"
+            class="w-20 h-20 md:w-32 md:h-32 object-cover rounded-full avatar-3d"
+          />
+        </div>
+      </div>
+      <div class="mt-4 w-3/4 bg-black dark:bg-white h-1 flex"></div>
+      <p class="text-xl">My links:</p>
+      <div class="pl-4 flex flex-wrap gap-6 w-full flex-grow">
         {links.map((link) => <Link href={link.href} label={link.label} />)}
       </div>
     </div>
@@ -35,35 +47,39 @@ const links = [
     </div>
   </div>
 </section>
+
 <style>
-  .card {
-    box-shadow:
-      20px 20px 60px #bebebe,
-      -20px -20px 60px #ffffff;
-  }
   .blob {
-    animation: blob-bounce 5s infinite ease;
+    animation: blob-bounce 5s infinite linear;
   }
 
   @keyframes blob-bounce {
     0% {
-      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      transform: translate(-100%, -100%) translate3d(50%, 0%, 0);
     }
-
+    12.5% {
+      transform: translate(-100%, -100%) translate3d(85%, 15%, 0);
+    }
     25% {
-      transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+      transform: translate(-100%, -100%) translate3d(100%, 50%, 0);
     }
-
+    37.5% {
+      transform: translate(-100%, -100%) translate3d(85%, 85%, 0);
+    }
     50% {
-      transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+      transform: translate(-100%, -100%) translate3d(50%, 100%, 0);
     }
-
+    62.5% {
+      transform: translate(-100%, -100%) translate3d(15%, 85%, 0);
+    }
     75% {
-      transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+      transform: translate(-100%, -100%) translate3d(0%, 50%, 0);
     }
-
+    87.5% {
+      transform: translate(-100%, -100%) translate3d(15%, 15%, 0);
+    }
     100% {
-      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      transform: translate(-100%, -100%) translate3d(50%, 0%, 0);
     }
   }
 </style>
