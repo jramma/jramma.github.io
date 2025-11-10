@@ -1,6 +1,7 @@
 # build output
 dist/
-
+.vscode
+bun.lock
 # generated types
 .astro/
 
