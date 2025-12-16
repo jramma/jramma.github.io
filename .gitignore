@@ -1,7 +1,6 @@
 # build output
 dist/
 .vscode
-bun.lock
 # generated types
 .astro/
 
@@ -17,7 +16,6 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
-bun.lock
 
 # macOS-specific files
 .DS_Store
