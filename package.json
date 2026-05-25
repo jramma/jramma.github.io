@@ -2,6 +2,7 @@
   "name": "git-pages",
   "type": "module",
   "version": "0.0.1",
+  "package-manager":"pnpm",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
